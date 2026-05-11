@@ -1,1 +1,0 @@
-schtasks /Create /TN "XishuXijie-DaytimePoll" /TR "powershell.exe -NoProfile -File \"C:\Users\申佳明\workspace\scripts\agent-runner.ps1\" -TaskName daytime-poll -Prompt \"You are XishuXijie. Quick poll: check GitHub notifications, update task-queue.md progress. If nothing new reply idle. Under 100 words.\"" /SC DAILY /ST 10:03 /RI 120 /DU 480 /F
