@@ -1,9 +1,19 @@
 import OpenAI from 'openai';
 
-const client = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY!,
-  baseURL: 'https://api.deepseek.com',
-});
+let _client: OpenAI | null = null;
+
+function getClient(): OpenAI {
+  if (!_client) {
+    if (!process.env.DEEPSEEK_API_KEY) {
+      throw new Error('DEEPSEEK_API_KEY 环境变量未设置');
+    }
+    _client = new OpenAI({
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      baseURL: 'https://api.deepseek.com',
+    });
+  }
+  return _client;
+}
 
 const SYSTEM_PROMPT = `你是一个风趣幽默的恋爱分析师，说话像朋友聊天，不端着，不讲课。
 
@@ -46,7 +56,7 @@ function formatAnswers(answers: Record<number, string>): string {
 }
 
 export async function generateReport(answers: Record<number, string>) {
-  const response = await client.chat.completions.create({
+  const response = await getClient().chat.completions.create({
     model: 'deepseek-chat',
     messages: [
       { role: 'system', content: SYSTEM_PROMPT },
