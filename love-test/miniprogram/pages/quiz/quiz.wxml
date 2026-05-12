@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <text class="progress-text">{{current}} / {{total}}</text>
+
+  <view class="question-card">
+    <text class="question-text">{{question.text}}</text>
+
+    <view class="options">
+      <view
+        wx:for="{{question.options}}"
+        wx:key="label"
+        class="option {{selected === item.label ? 'option-selected' : ''}}"
+        bindtap="selectOption"
+        data-label="{{item.label}}"
+        data-text="{{item.text}}"
+      >
+        <text class="option-label">{{item.label}}</text>
+        <text class="option-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <button
+    class="next-btn {{selected ? '' : 'btn-disabled'}}"
+    bindtap="nextQuestion"
+    disabled="{{!selected}}"
+  >
+    {{isLast ? '生成我的报告' : '下一题'}}
+  </button>
+</view>

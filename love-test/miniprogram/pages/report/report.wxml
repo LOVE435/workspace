@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="report-header">
+    <text class="archetype-emoji">{{report.emoji}}</text>
+    <text class="archetype-name">{{report.archetype}}</text>
+    <text class="archetype-summary">"{{report.summary}}"</text>
+  </view>
+
+  <view class="report-body">
+    <view class="section">
+      <text class="section-title">深度分析</text>
+      <text class="section-text">{{report.analysis}}</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">你的优势</text>
+      <text class="section-text">{{report.strengths}}</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">成长方向</text>
+      <text class="section-text">{{report.growth}}</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">恋爱建议</text>
+      <text class="section-text">{{report.love_advice}}</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="share-quote">
+      <text class="quote-text">"{{report.share_quote}}"</text>
+    </view>
+    <button class="share-btn" open-type="share">分享给朋友测一测</button>
+    <button class="retry-btn" bindtap="retry">再做一次</button>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="hero">
+    <text class="hero-emoji">💘</text>
+    <text class="hero-title">AI 爱情原型测试</text>
+    <text class="hero-sub">回答 6 道题，发现你在爱情里的真实模样</text>
+  </view>
+
+  <view class="features">
+    <view class="feature-item">
+      <text class="feature-icon">🧠</text>
+      <text class="feature-text">心理学深度分析</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">✨</text>
+      <text class="feature-text">AI 实时生成专属报告</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">💌</text>
+      <text class="feature-text">分享朋友圈一键晒图</text>
+    </view>
+  </view>
+
+  <button class="start-btn" bindtap="startQuiz">开始测试</button>
+  <text class="disclaimer">基于心理学理论，仅供娱乐参考</text>
+</view>

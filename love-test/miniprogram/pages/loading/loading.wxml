@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="animation-area">
+    <text class="heart">💓</text>
+    <view class="dots">
+      <view class="dot"></view>
+      <view class="dot"></view>
+      <view class="dot"></view>
+    </view>
+  </view>
+  <text class="status-text">{{statusText}}</text>
+  <text wx:if="{{!error}}" class="hint">AI 正在深度分析你的爱情人格</text>
+  <button wx:if="{{error}}" class="retry-btn" bindtap="retry">重新生成</button>
+</view>
